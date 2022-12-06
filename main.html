@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="data">
+        <pre>
+        176 3 Write a Python function to calculate the factorial of a given number
+        num = int(input("Enter the number"))
+        def fact(num):
+            if num == 1 or num==0 :
+                return 1 
+            else :
+                return num*fact(num-1)
+        print("factorial of entered number is " + str(fact(num)))
+        
+        
+        175 3
+        Create a pair of functions to convert Fahrenheit to Celsius temperature values and 
+        vice versa. Where C = (F - 32) * (5 / 9) 
+        
+        
+        def f_to_c(temp_in_f):
+            return (temp_in_f - 32) * (5 / 9)
+        def c_to_f(temp_in_c):
+            return (9*temp_in_c)/5 + 32 
+        '''Enter value and use function c_to_f to convert Celsius into Fahrenheit or use function f_to_c to convert Fahrenheit into Celsius  and pass the Entered value '''
+        temp  = int(input("Enter value in fahrenheit or celisius: "))
+        c_to_f(temp)
+        f_to_c(temp)
+        
+        
+        177 3 Write a Python function to check whether a number is in a given range.
+        r1 =int(input("Enter range value 1 "))
+        r2 = int(input("Enter range value 2 "))
+        x = int(input("Enter the value : "))
+        if r1-r2>0 :
+            if r1>x>r2:
+                print("Yes it's in given range")
+            else :
+                print("it is not in given range anymore")
+        else :
+            if r2>x>r1 :
+                print("Yes it's in given range")
+            else :
+                print("it is not in given range anymore")
+        
+        
+        
+        178 3
+        Write a Python function to display the Fibonacci sequence till the given user input n.
+        num = int(input("Enter the number "))
+        def print_fibo(number):
+            a = 0 
+            b = 1 
+            print(a,b,end = " ")
+            while(True):
+                c = a  + b 
+                a = b
+                b = c 
+                if number<c:
+                    break 
+                print(c,end=" ")
+        print_fibo(num)
+        
+        
+        179 3 Write a Python function to find the Max of TWO numbers.
+        num = int(input("Enter number 1 "))
+        num1 = int(input("Enter number 2 "))
+        if num>num1:
+            print("max ",num)
+        else :
+            print("max ",num1)
+        
+        
+        180 3
+        Write a Python program to accept two numbers and check it for odd or even number
+        num = int(input("Enter the number 1 : "))
+        num1  = int(input("Enter number 2 :"))
+        if num%2==0 num1%2==0:
+            print(num, " is even ")
+        else :
+            print(num," is odd")
+            
+        
+        181 3
+        Write a Python program to check whether the given no is Armstrong or not using user 
+        defined function
+        def print_armstrong(number):
+            sum = 0
+            temp = number
+            if number <0 :
+                print("Negative numbers are not allowed ")
+            else :
+                length_of_number = len(str(temp))
+                while(number!=0):
+                    rem = number%10 
+                    rem = rem**length_of_number
+                    sum = sum + rem 
+                    number = number//10 
+                if sum == temp :
+                        print(temp , " is Armstrong Number ")
+                else :
+                        print(temp ,  " is not Armstrong Number ")
+        num = int(input("Enter Any number to check whether it is armstrong or not"))
+        print_armstrong(num)
+        
+        183 3
+        Write a Python Program to demonstarte a Simple Calculator using python functions
+        
+        val1 = int(input("Enter number  1  : "))
+        sym = input("Enter symbol")
+        val2 = int(input("Enter number 2 "))
+        def calc(val1,sym,val2):
+            if sym=="+":
+                print(val1+val2)
+            elif sym == "-":
+                print(val1-val2)
+            elif sym == "*":
+                print(val1*val2)
+            elif sym == "/":
+                print(val1/val2)
+            elif sym == "//":
+                print(val1//val2)
+            elif sym == "%":
+                print(val1%val2)
+            else :
+                print("Enter valid symbol!!!")
+        calc(val1,sym,val2)
+        
+        184 3
+        Write a Python program to demonstrate the function of finding sum and average of 
+        first n natural numbers.
+        num = int(input("Enter number n "))
+        def addi(num):
+            sum = 0 
+            for i in range(num + 1):
+                sum = sum + i 
+            print("sum " , sum)
+        def Ave(num):
+            sum = 0 
+            for i in range(num + 1):
+                sum = sum + i 
+            print("Average  : ", sum/num)
+        
+        addi(num)
+        Ave(num)
+        
+        
+        
+        Write a Python program to find reverse of given number using user defined function.
+        num = int(input("Enter the number "))
+        def rev(num):
+            reve = 0 
+            while(num!=0):
+                rem = num%10 
+                reve  = reve * 10 + rem
+                num = num//10 
+            print(reve)
+        rev(num)
+        
+        188 3
+        Write a Python function that accepts a string and calculate the number of upper case 
+        letters and lower case letters.
+        string  = input("Enter String ")
+        def counter(string):
+            count_of_lowercase = 0 
+            count_of_Uppercase  = 0 
+            for i in string:
+                if 97<=ord(i)<=122:
+                    count_of_lowercase += 1 
+                elif 65<=ord(i)<=90:
+                    count_of_Uppercase +=1 
+            if (count_of_Uppercase + count_of_lowercase )!=len(string):
+                print("=====>String contains Numbers or Symbols or Spaces ")
+            print("Count of lowercase " , count_of_lowercase)
+            print("count_of Uppercase " , count_of_Uppercase)
+        counter(string)
+        
+        
+        
+        187 3
+        Write a Python function that checks whether a passed string is palindrome or not
+        string = input("Enter the string ")
+        def check_palidrom(string):
+            revstring = ""
+            for i in string:
+                revstring = i + revstring
+            if string == revstring:
+                print(string, " is Palidrome")
+            else :
+                print("String is not palidrome")
+        check_palidrom(string)
+    </pre>
+    </div>
+    
+</body>
+</html>
